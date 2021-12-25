@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1>{{ lesson.name }}</h1>
+<video width="750" controls>
+    <source src="{{ lesson.video.url }}">
+</video>
+
+{% endblock %}

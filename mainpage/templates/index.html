@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-4">
+      <h2>О проекте </h2>
+      <p>«50 000 программистов. Одна семья – один программист» – это социальный проект, инициированный КАРПОУ (Кыргызская Ассоциация разработчиков программного обеспечения и услуг) для желающих освоить профессии нового времени, но не имеющих финансовой возможности оплатить свое обучение на коммерческой основе. Получите востребованную профессию будущего с гарантией заработка и измените привычный формат жизни, как 1000+ наших любимых выпускников</p>
+      <h3 class="mt-4">Обучение</h3>
+    
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+          <a class="nav-link active" href="#"> Целевая аудитория</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Контакты</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Регистрация</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-8">
+      {% for description in description_list %}
+      <h2 class="mt-5"><a href="{% url 'description' description.id %}">{{ description.title }}</a></h2>
+      <h5>{{ description.created_date }}</h5>
+    <div class="container mt-3">
+      <img src="images/image_2.jpg" alt="image_2" width="304" height="236"> 
+    </div>
+      <p>{{ description.text }}</p>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}
+
+
